@@ -7,11 +7,13 @@ const refs = {
 };
 
 refs.input.addEventListener("blur", () => {
-  if (refs.input.value.length >= parseInt(refs.data.dataset.length)) {
+  if (refs.input.value.length === parseInt(refs.data.dataset.length)) {
     console.log("valid");
     refs.input.classList.add("valid");
+    refs.input.classList.remove("invalid");
   } else {
     console.log("invalid");
     refs.input.classList.add("invalid");
+    refs.input.classList.remove("valid");
   }
 });
